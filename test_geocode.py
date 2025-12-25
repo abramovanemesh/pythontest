@@ -1,9 +1,20 @@
-#Реверсивный поиск
-import requests
+import pytest
 import time
-import json
-# функция для нахождения адреса по реверсивному поиску
-def reverse_geocode(lat, lon):
+import requests
+from jsonschema import validate
+from configuration import URL_NOMINATIM #из файла (название) импортирую переменную (url)
+from file_result_reverse_geocode import address_4
+
+
+
+headers = {
+    'User-Agent': 'MyGeocodingApp/1.0 (abramova-nemesh@gmail.com)',
+    'Accept': 'application/json'
+}
+
+@pytest.mark.parametrize('lat, lon, result', [(41.38683466270279, 2.1460247039794926, address_4)])
+def test_getting_post(lat, lon, result):
+#    response = requests.get(URL_NOMINATIM, headers=headers) # получаю ответ страницы по данному в константе адресу. нужно добавить headers, так как без него на этом сайте не получаетя отправить запрос
     base_url = 'https://nominatim.openstreetmap.org/reverse'
     params = {
         'lat': lat,
@@ -12,27 +23,20 @@ def reverse_geocode(lat, lon):
         'accept-language': 'ru'
     }
     headers = {
-        'User-Agent': 'MyGeocodingApp/1.0 (abramova-nemesh@gmail.com)',
-        'Accept': 'application/json'
+    'User-Agent': 'MyGeocodingApp/1.0 (abramova-nemesh@gmail.com)',
+    'Accept': 'application/json'
     }
     time.sleep(3)
     response = requests.get(base_url, params=params, headers=headers)
-    print(f"Статус код {response.status_code}")
-    if response.status_code == 200:
-        result = response.json()
-        with open('test_lag_lon.json', 'r', encoding='utf-8') as file:
-            dict_from_file = json.load(file)
-            if dict_from_file == response.json():
-                print('Сошлось')
-        print(f"Результат поиска {response.json()}")
-    else:
-        print(f"Ошибка: {response.status_code}")
-        result = None
+    response_data = response.json()
+    assert response.status_code == 200, 'Received status code is not equal to expected' #Проверяем, что соответствует необходимому значению, иначе выводится ошибка, которая указана после запятой
+    validate(response_data, result)
+    print(response.json())
 
 
-reverse_geocode(lat=63.57239690319817, lon=53.65161001682282)
-reverse_geocode(lat=-22.906626805986644, lon=-43.18848431110382)
-reverse_geocode(lat=41.38683466270279, lon=2.1460247039794926)
+test_reverse_geocode(lat=63.57239690319817, lon=53.65161001682282)
+# reverse_geocode(lat=-22.906626805986644, lon=-43.18848431110382)
+# reverse_geocode(lat=41.38683466270279, lon=2.1460247039794926)
 
 
 # Прямой поиск
