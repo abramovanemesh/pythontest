@@ -1,0 +1,173 @@
+#{'place_id': 180848080, 'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright',
+    # 'osm_type': 'node', 'osm_id': 583204619, 'lat': '55.7558470', 'lon': '37.6177036', 'category': 'highway',
+    # 'type': 'milestone', 'place_rank': 30, 'importance': 0.45205081730259244, 'addresstype': 'highway',
+    # 'name': 'Нулевой километр', 'display_name': 'Нулевой километр, проезд Воскресенские Ворота, 18, 62, Тверской район,
+    # Москва, Центральный федеральный округ, 103265, Россия', 'address': {'highway': 'Нулевой километр',
+    # 'road': 'проезд Воскресенские Ворота', 'quarter': '18', 'suburb': 'Тверской район', 'city': 'Москва', 'state':
+    # 'Москва', 'ISO3166-2-lvl4': 'RU-MOW', 'region': 'Центральный федеральный округ', 'postcode': '103265', 'country':
+    # 'Россия', 'country_code': 'ru'}, 'boundingbox': ['55.7557970', '55.7558970', '37.6176536', '37.6177536']}
+
+# URL_NOMINATIM = 'https://nominatim.openstreetmap.org/reverse?lat=55.7558470&lon=37.6177036&format=jsonv2&accept-language=ru'
+
+
+
+#post_schema_1 = {'place_id': 180848080, 'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright', 'osm_type': 'node', 'osm_id': 583204619, 'lat': '55.7558470', 'lon': '37.6177036', 'category': 'highway', 'type': 'milestone', 'place_rank': 30, 'importance': 0.45205081730259244, 'addresstype': 'highway', 'name': 'Нулевой километр', 'display_name': 'Нулевой километр, проезд Воскресенские Ворота, 18, 62, Тверской район, Москва, Центральный федеральный округ, 103265, Россия', 'address': {'highway': 'Нулевой километр', 'road': 'проезд Воскресенские Ворота', 'quarter': '18', 'suburb': 'Тверской район', 'city': 'Москва', 'state': 'Москва', 'ISO3166-2-lvl4': 'RU-MOW', 'region': 'Центральный федеральный округ', 'postcode': '103265', 'country': 'Россия', 'country_code': 'ru'}, 'boundingbox': ['55.7557970', '55.7558970', '37.6176536', '37.6177536']}
+
+# reverse поиск
+
+
+coord_1 = {'lat': 55.755843410046594, 'lon': 37.617734670639045}
+address_1 = {
+    'type': 'object',
+    'properties': {
+        'category': {'type': 'string', 'enum': ['highway']},
+        'address' : {'enum': [{
+        'highway': 'Нулевой километр',
+        'road': 'проезд Воскресенские Ворота',
+        'quarter': '18',
+        'suburb': 'Тверской район',
+        'city': 'Москва',
+        'state':'Москва',
+        'ISO3166-2-lvl4': 'RU-MOW',
+        'region': 'Центральный федеральный округ',
+        'postcode': '103265',
+        'country':'Россия',
+        'country_code': 'ru'}]}
+    },
+    'required': ['address']
+}
+
+
+coord_2 = {'lat': 63.57239690319817, 'lon': 53.65161001682282}
+address_2 = {
+    'type': 'object',
+    'properties': {
+        'category': {'type': 'string', 'enum': ['shop']},
+        'type': {'type': 'string', 'enum': ['kitchen']},
+        'address' : {'enum': [{
+        "shop": "Сантехника",
+        "house_number": "57",
+        "road": "Интернациональная улица",
+        "town": "Ухта",
+        "county": "муниципальный округ Ухта",
+        "state": "Республика Коми",
+        "ISO3166-2-lvl4": "RU-KO",
+        "region": "Северо-Западный федеральный округ",
+        "postcode": "169300",
+        "country": "Россия",
+        "country_code": "ru"
+    }]}
+    },
+    'required': ['address']
+}
+
+coord_3 = {'lat': -22.906626805986644, 'lon': -43.18848431110382}
+address_3 = {
+    'type': 'object',
+    'properties': {
+        'category': {'type': 'string', 'enum': ['highway']},
+        'type': {'type': 'string', 'enum': ['pedestrian']},
+        'address' : {'enum': [{
+        "road": "Praça da República",
+        "neighbourhood": "Saara",
+        "suburb": "Centro",
+        "city": "Рио-де-Жанейро",
+        "municipality": "Região Geográfica Imediata do Rio de Janeiro",
+        "county": "Região Metropolitana do Rio de Janeiro",
+        "state_district": "Região Geográfica Intermediária do Rio de Janeiro",
+        "state": "Рио-де-Жанейро",
+        "ISO3166-2-lvl4": "BR-RJ",
+        "region": "Юго-восточный регион",
+        "postcode": "20211-351",
+        "country": "Бразилия",
+        "country_code": "br"
+    }]}
+    },
+    'required': ['address']
+}
+
+coord_4 = {'lat': 41.38683466270279, 'lon': 2.1460247039794926}
+address_4 = {
+    'type': 'object',
+    'properties': {
+        'category': {'type': 'string', 'enum': ['shop']},
+        'type': {'type': 'string', 'enum': ['electronics']},
+        'address' : {'enum': [{
+        "shop": "Samsung",
+        "house_number": "111",
+        "road": "Carrer de Còrsega",
+        "quarter": "la Nova Esquerra de l'Eixample",
+        "suburb": "Эшампле",
+        "city": "Барселона",
+        "county": "Барселонес",
+        "province": "Барселона",
+        "ISO3166-2-lvl6": "ES-B",
+        "state": "Каталония",
+        "ISO3166-2-lvl4": "ES-CT",
+        "postcode": "08029",
+        "country": "Испания",
+        "country_code": "es"
+    }]}
+    },
+    'required': ['address']
+}
+
+
+
+
+
+
+
+
+
+
+
+# search-поиск
+# search_geocode("10/Псковская", "Вологда", "Вологодская область", "Россия")
+# search_geocode("26/West Cedar Street", "Boston", "Suffolk County", "Соединенные Штаты Америки")
+# search_geocode("445/Rua Bueno Brandão", "Сан-Паулу", "Região Metropolitana de São Paulo", "Бразилия")
+# search_geocode("Résidence la Sablière", "Иль-де-Франс", "Валь-де-Марн", "Франция")
+
+
+search_1 = {
+    "street": "10/Псковская",
+    "city": "Вологда",
+    "county": "Вологодская область",
+    "country": "Россия"
+}
+result_search_1 = {'lat': 59.1987304, 'lon': 39.8335431}
+
+
+search_2 = {
+    "street": "94/West Cedar Street",
+    "city": "Boston",
+    "county": "Suffolk County",
+    "country": "Соединенные Штаты Америки"
+}
+result_search_2 = {'lat': 42.3606016, 'lon': -71.0702549}
+
+search_3 = {
+    "street": "309/Rua Bueno Brandão",
+    "city": "Сан-Паулу",
+    "county": "Região Metropolitana de São Paulo",
+    "country": "Бразилия"
+}
+result_search_3 = {'lat': -23.5908735, 'lon': -46.6707229}
+
+search_4 = {
+    "street": "Résidence la Sablière",
+    "city": "Иль-де-Франс",
+    "county": "Валь-де-Марн",
+    "country": "Франция"
+}
+result_search_4 = {'lat': 48.8311521, 'lon': 2.5422879}
+
+# пустой результат
+search_5 = {
+    "street": "12/Ивановская ",
+    "city": "Бухарест",
+    "county": "Самарская область ",
+    "country": "Испания"
+}
+
+result_search_5 = {}
