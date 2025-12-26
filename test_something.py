@@ -1,5 +1,5 @@
 import pytest
-
+import allure
 import requests
 from jsonschema import validate
 from file_result_reverse_geocode import *
@@ -12,14 +12,17 @@ from methods import *
     (coord_3['lat'], coord_3['lon'], address_3),
     (coord_4['lat'], coord_4['lon'], address_4)
 ])
+# Запуск теста на проверку реверсивного поиска
 def test_reverse_geocode(lat, lon, result):
-    # Используем импортированную функцию
-    response = makes_url_reverse_geocode(lat, lon)
-    response_data = response.json()
-
-    assert response.status_code == 200, 'Received status code is not equal to expected' #Проверяем, что соответствует необходимому значению, иначе выводится ошибка, которая указана после запятой
-    validate(response_data, result)
-    print(response.json())
+    # Создание запроса на проверку
+    with allure.step('Составление запроса'):
+        response = makes_url_reverse_geocode(lat, lon)
+        response_data = response.json()
+    with allure.step('Проверка статус кода'):
+        assert response.status_code == 200, 'Received status code is not equal to expected' #Проверяем, что соответствует необходимому значению, иначе выводится ошибка, которая указана после запятой
+    with allure.step('Сравнение ожидаемых результатов с действительными'):
+        validate(response_data, result)
+#    print(response.json())
 
 # поиск координат по адресу
 #

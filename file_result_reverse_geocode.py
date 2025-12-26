@@ -61,14 +61,16 @@ address_2 = {
     'required': ['address']
 }
 
-coord_3 = {'lat': -22.906626805986644, 'lon': -43.18848431110382}
+coord_3 = {'lat': -22.9036181, 'lon': -43.1882037}
 address_3 = {
     'type': 'object',
     'properties': {
-        'category': {'type': 'string', 'enum': ['highway']},
-        'type': {'type': 'string', 'enum': ['pedestrian']},
+        'category': {'type': 'string', 'enum': ['building']},
+        'type': {'type': 'string', 'enum': ['school']},
         'address' : {'enum': [{
-        "road": "Praça da República",
+    'building': 'Escola Municipal Rivadávia Corrêa',
+        "house_number": "1314",
+        "road": "Avenida Presidente Vargas",
         "neighbourhood": "Saara",
         "suburb": "Centro",
         "city": "Рио-де-Жанейро",
@@ -78,7 +80,7 @@ address_3 = {
         "state": "Рио-де-Жанейро",
         "ISO3166-2-lvl4": "BR-RJ",
         "region": "Юго-восточный регион",
-        "postcode": "20211-351",
+        "postcode": "20071-004",
         "country": "Бразилия",
         "country_code": "br"
     }]}
