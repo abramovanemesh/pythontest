@@ -24,16 +24,13 @@ from methods import *
 
 # поиск координат по адресу
 @allure.title('Проверка прямого геокодирования')
-@pytest.mark.parametrize('street, city, county, country, result', [
-    (search_1['street'], search_1['city'], search_1['county'], search_1['country'], result_search_1),
-    (search_2['street'], search_2['city'], search_2['county'], search_2['country'], result_search_2),
-    (search_3['street'], search_3['city'], search_3['county'], search_3['country'], result_search_3),
-    (search_4['street'], search_4['city'], search_4['county'], search_4['country'], result_search_4),
-    (search_5['street'], search_5['city'], search_5['county'], search_5['country'], result_search_5)
-])
-def test_search_geocode(street, city, county, country, result):
+@pytest.mark.parametrize('params', params_for_search_test)
+def test_search_geocode(params):
     with allure.step('Составление запроса по координатам'):
-        response = makes_url_search_geocode(street, city, county, country)
+        response = makes_url_search_geocode(street = params['street'], city = params['city'],
+                                            county = params['county'], country = params['country'])
+        with allure.step('Проверка статус кода'):
+            assert response.status_code == 200, 'Статус код отличается от 200'  # Проверяем, что соответствует необходимому значению, иначе выводится ошибка, которая указана после запятой
         response_data = response.json()
     with allure.step('Запись результатов в словарь'):
         if len(response_data) != 0:
@@ -43,9 +40,9 @@ def test_search_geocode(street, city, county, country, result):
             }
         else:
             actual_coord = {}
-    with allure.step('Проверка статус кода'):
-        assert response.status_code == 200, 'Received status code is not equal to expected' #Проверяем, что соответствует необходимому значению, иначе выводится ошибка, которая указана после запятой
+
     with allure.step('Сравнение ожидаемых результатов с действительными'):
-        assert actual_coord == result
+        assert actual_coord == params['coordinates'], (f'Полученные координаты - {actual_coord}, '
+                                                       f'ожидаемые - {params["coordinates"]}')
     print(response.json())
 

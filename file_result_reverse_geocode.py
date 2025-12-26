@@ -68,7 +68,7 @@ address_3 = {
         'category': {'type': 'string', 'enum': ['building']},
         'type': {'type': 'string', 'enum': ['school']},
         'address' : {'enum': [{
-    'building': 'Escola Municipal Rivadávia Corrêa',
+        'building': 'Escola Municipal Rivadávia Corrêa',
         "house_number": "1314",
         "road": "Avenida Presidente Vargas",
         "neighbourhood": "Saara",
@@ -124,52 +124,41 @@ address_4 = {
 
 
 
-# search-поиск
-# search_geocode("10/Псковская", "Вологда", "Вологодская область", "Россия")
-# search_geocode("26/West Cedar Street", "Boston", "Suffolk County", "Соединенные Штаты Америки")
-# search_geocode("445/Rua Bueno Brandão", "Сан-Паулу", "Região Metropolitana de São Paulo", "Бразилия")
-# search_geocode("Résidence la Sablière", "Иль-де-Франс", "Валь-де-Марн", "Франция")
 
-
-search_1 = {
-    "street": "10/Псковская",
+params_for_search_test = [
+    {"street": "10/Псковская",
     "city": "Вологда",
     "county": "Вологодская область",
-    "country": "Россия"
-}
-result_search_1 = {'lat': 59.1987304, 'lon': 39.8335431}
-
-
-search_2 = {
+    "country": "Россия",
+    "coordinates": {'lat': 59.1987304, 'lon': 39.8335431}
+     },
+    {
     "street": "94/West Cedar Street",
     "city": "Boston",
     "county": "Suffolk County",
-    "country": "Соединенные Штаты Америки"
-}
-result_search_2 = {'lat': 42.3606016, 'lon': -71.0702549}
-
-search_3 = {
+    "country": "Соединенные Штаты Америки",
+    "coordinates": {'lat': 42.3606016, 'lon': -71.0702549}
+    },
+    {
     "street": "309/Rua Bueno Brandão",
     "city": "Сан-Паулу",
     "county": "Região Metropolitana de São Paulo",
-    "country": "Бразилия"
-}
-result_search_3 = {'lat': -23.5908735, 'lon': -46.6707229}
-
-search_4 = {
+    "country": "Бразилия",
+    "coordinates": {'lat': -23.5908735, 'lon': -46.6707229}
+    },
+    {
     "street": "Résidence la Sablière",
     "city": "Иль-де-Франс",
     "county": "Валь-де-Марн",
-    "country": "Франция"
-}
-result_search_4 = {'lat': 48.8311521, 'lon': 2.5422879}
-
-# пустой результат
-search_5 = {
+    "country": "Франция",
+    "coordinates": {'lat': 48.8311521, 'lon': 2.5422879}
+    },
+    {
     "street": "12/Ивановская ",
     "city": "Бухарест",
     "county": "Самарская область ",
-    "country": "Испания"
-}
+    "country": "Испания",
+    "coordinates": {}
+    }
+]
 
-result_search_5 = {}
