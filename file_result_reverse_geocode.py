@@ -1,21 +1,4 @@
-#{'place_id': 180848080, 'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright',
-    # 'osm_type': 'node', 'osm_id': 583204619, 'lat': '55.7558470', 'lon': '37.6177036', 'category': 'highway',
-    # 'type': 'milestone', 'place_rank': 30, 'importance': 0.45205081730259244, 'addresstype': 'highway',
-    # 'name': 'Нулевой километр', 'display_name': 'Нулевой километр, проезд Воскресенские Ворота, 18, 62, Тверской район,
-    # Москва, Центральный федеральный округ, 103265, Россия', 'address': {'highway': 'Нулевой километр',
-    # 'road': 'проезд Воскресенские Ворота', 'quarter': '18', 'suburb': 'Тверской район', 'city': 'Москва', 'state':
-    # 'Москва', 'ISO3166-2-lvl4': 'RU-MOW', 'region': 'Центральный федеральный округ', 'postcode': '103265', 'country':
-    # 'Россия', 'country_code': 'ru'}, 'boundingbox': ['55.7557970', '55.7558970', '37.6176536', '37.6177536']}
-
-# URL_NOMINATIM = 'https://nominatim.openstreetmap.org/reverse?lat=55.7558470&lon=37.6177036&format=jsonv2&accept-language=ru'
-
-
-
-#post_schema_1 = {'place_id': 180848080, 'licence': 'Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright', 'osm_type': 'node', 'osm_id': 583204619, 'lat': '55.7558470', 'lon': '37.6177036', 'category': 'highway', 'type': 'milestone', 'place_rank': 30, 'importance': 0.45205081730259244, 'addresstype': 'highway', 'name': 'Нулевой километр', 'display_name': 'Нулевой километр, проезд Воскресенские Ворота, 18, 62, Тверской район, Москва, Центральный федеральный округ, 103265, Россия', 'address': {'highway': 'Нулевой километр', 'road': 'проезд Воскресенские Ворота', 'quarter': '18', 'suburb': 'Тверской район', 'city': 'Москва', 'state': 'Москва', 'ISO3166-2-lvl4': 'RU-MOW', 'region': 'Центральный федеральный округ', 'postcode': '103265', 'country': 'Россия', 'country_code': 'ru'}, 'boundingbox': ['55.7557970', '55.7558970', '37.6176536', '37.6177536']}
-
 # reverse поиск
-
-
 
 coord_1 = {'lat': 55.755843410046594, 'lon': 37.617734670639045}
 address_1 = {
@@ -116,14 +99,7 @@ address_4 = {
 
 
 
-
-
-
-
-
-
-
-
+#Прямой поиск по адресу
 
 params_for_search_test = [
     {"street": "10/Псковская",
