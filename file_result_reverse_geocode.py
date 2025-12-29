@@ -16,6 +16,7 @@
 # reverse поиск
 
 
+
 coord_1 = {'lat': 55.755843410046594, 'lon': 37.617734670639045}
 address_1 = {
     'type': 'object',
@@ -38,14 +39,13 @@ address_1 = {
 }
 
 
-coord_2 = {'lat': 63.57239690319817, 'lon': 53.65161001682282}
+coord_2 = {'lat': 63.57250920316036, 'lon': 53.65243077278138}
 address_2 = {
     'type': 'object',
     'properties': {
-        'category': {'type': 'string', 'enum': ['shop']},
-        'type': {'type': 'string', 'enum': ['kitchen']},
+        'category': {'type': 'string', 'enum': ['building']},
+        'type': {'type': 'string', 'enum': ['apartments']},
         'address' : {'enum': [{
-        "shop": "Сантехника",
         "house_number": "57",
         "road": "Интернациональная улица",
         "town": "Ухта",

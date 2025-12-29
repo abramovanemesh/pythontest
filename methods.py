@@ -22,9 +22,9 @@ def makes_url_reverse_geocode(lat, lon):
     'Accept': 'application/json'
     }
     response = requests.get(base_url, params=params, headers=headers)
-    # response_data = check_response(response)  #во втором файле ничего не сделано для этого
-    # return response_data
-    return response
+    response_data = check_response(response)  #во втором файле ничего не сделано для этого
+    return response_data
+    # return response
 
 
 
