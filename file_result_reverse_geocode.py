@@ -57,9 +57,6 @@ address_3 = {
         "neighbourhood": "Saara",
         "suburb": "Centro",
         "city": "Рио-де-Жанейро",
-        "municipality": "Região Geográfica Imediata do Rio de Janeiro",
-        "county": "Região Metropolitana do Rio de Janeiro",
-        "state_district": "Região Geográfica Intermediária do Rio de Janeiro",
         "state": "Рио-де-Жанейро",
         "ISO3166-2-lvl4": "BR-RJ",
         "region": "Юго-восточный регион",
@@ -71,7 +68,7 @@ address_3 = {
     'required': ['address']
 }
 
-coord_4 = {'lat': 41.38683466270279, 'lon': 2.1460247039794926}
+coord_4 = {'lat': 41.38719751343148, 'lon': 2.146624828421553}
 address_4 = {
     'type': 'object',
     'properties': {
@@ -85,7 +82,7 @@ address_4 = {
         "suburb": "Эшампле",
         "city": "Барселона",
         "county": "Барселонес",
-        "province": "Барселона",
+        "state_district": "Барселона",
         "ISO3166-2-lvl6": "ES-B",
         "state": "Каталония",
         "ISO3166-2-lvl4": "ES-CT",
@@ -106,19 +103,19 @@ params_for_search_test = [
     "city": "Вологда",
     "county": "Вологодская область",
     "country": "Россия",
-    "coordinates": {'lat': 59.1987304, 'lon': 39.8335431}
+    "coordinates": {'lat': 59.1987305, 'lon': 39.8335431}
      },
     {
     "street": "94/West Cedar Street",
     "city": "Boston",
     "county": "Suffolk County",
     "country": "Соединенные Штаты Америки",
-    "coordinates": {'lat': 42.3606016, 'lon': -71.0702549}
+    "coordinates": {'lat': 42.3606017, 'lon': -71.0702549}
     },
     {
     "street": "309/Rua Bueno Brandão",
     "city": "Сан-Паулу",
-    "county": "Região Metropolitana de São Paulo",
+    "county": "Юго-восточный регион",
     "country": "Бразилия",
     "coordinates": {'lat': -23.5908735, 'lon': -46.6707229}
     },
@@ -130,7 +127,7 @@ params_for_search_test = [
     "coordinates": {'lat': 48.8311521, 'lon': 2.5422879}
     },
     {
-    "street": "12/Ивановская ",
+    "street": "12/Ивановская",
     "city": "Бухарест",
     "county": "Самарская область ",
     "country": "Испания",
