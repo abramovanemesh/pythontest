@@ -31,7 +31,7 @@ def makes_url_reverse_geocode(lat, lon):
 
 # функция для нахождения координат по адресу
 def makes_url_search_geocode(street, city, county, country):
-    base_url = 'https://nominatim.openstreetmap.org'
+    base_url = 'https://nominatim.openstreetmap.org/search'
     params = {
         'street': street,
         'city': city,
