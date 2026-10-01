@@ -131,7 +131,7 @@ params_for_search_test = [
     "city": "Бухарест",
     "county": "Самарская область ",
     "country": "Испания",
-    "coordinates": {}
+    "coordinates": None    #Это правка без проверки
     }
 ]
 

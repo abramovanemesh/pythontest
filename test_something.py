@@ -1,7 +1,6 @@
 import pytest
 import allure
 from jsonschema import validate
-from file_result_reverse_geocode import *
 from methods import *
 
 @allure.title('Проверка обратного геокодирования')
@@ -22,7 +21,7 @@ def test_reverse_geocode(lat, lon, result):
 @allure.title('Проверка прямого геокодирования')
 @pytest.mark.parametrize('params', params_for_search_test)
 def test_search_geocode(params):
-    with allure.step('Составление запроса по координатам'):
+    with allure.step('Составление запроса через задание адреса'):
         response_data = makes_url_search_geocode(street = params['street'], city = params['city'],
                                             county = params['county'], country = params['country'])
     with allure.step('Получение координат из ответа'):

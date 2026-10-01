@@ -1,11 +1,14 @@
 import requests
 from file_result_reverse_geocode import *
+from allure_logging import logger
 
 
 # проверка на то, какой ответ будет, и что делать, если ошибка
 def check_response(response):
+    logger.info(f"Проверка полученного ответа. URL: {response.url}. Статус код: {response.status_code}")
     assert response.status_code == 200, 'Статус код отличается от 200' #Проверяем, что соответствует необходимому значению, иначе выводится ошибка, которая указана после запятой
     response_data = response.json()
+    logger.info(f"Получено тело ответа: {response_data}")
     return response_data
 
 # ф-я на генерирование url для обратного поиска
@@ -21,7 +24,8 @@ def makes_url_reverse_geocode(lat, lon):
     'User-Agent': 'MyGeocodingApp/1.0 (abramova-nemesh@gmail.com)',
     'Accept': 'application/json'
     }
-    response = requests.get(base_url, params=params, headers=headers)
+    logger.info(f"Координаты для обратного геокодинга lat={lat}, lon={lon}")
+    response = requests.get(base_url, params=params, headers=headers, timeout=10)
     response_data = check_response(response)  #во втором файле ничего не сделано для этого
     return response_data
     # return response
@@ -44,7 +48,8 @@ def makes_url_search_geocode(street, city, county, country):
         'User-Agent': 'MyGeocodingApp/1.0 (abramova-nemesh@gmail.com)',
         'Accept': 'application/json'
     }
-    response = requests.get(base_url, params=params, headers=headers)
+    logger.info(f"Поиск по адресу: {street}, {city}, {county}, {country}")
+    response = requests.get(base_url, params=params, headers=headers, timeout=10)
     response_data = check_response(response)
     return response_data
 
@@ -55,6 +60,8 @@ def get_coordinates(response_data):
             'lat': float(response_data[0]['lat']),
             'lon': float(response_data[0]['lon']),
         }
+        logger.info(f"Получены координаты: {actual_coord}")
     else:
-        actual_coord = {}
+        actual_coord = None    #Это правка без проверки
+        logger.info(f"По указанному адресу координаты не найдены")
     return actual_coord
