@@ -1,11 +1,9 @@
 import time
 import requests
-from file_result_reverse_geocode import coord_1, coord_2, coord_3, coord_4, \
-    address_1, address_2, address_3, address_4, params_for_search_test
 from allure_logging import logger
 
 
-# проверка на то, какой ответ будет, и что делать, если ошибка
+# Получение ответа
 def check_response(response):
     logger.info(f"URL запроса: {response.url}. \n Получен статус код: {response.status_code}")
     assert response.status_code == 200, 'Статус код отличается от 200'
@@ -13,7 +11,7 @@ def check_response(response):
     logger.info(f"Получено тело ответа: {response_data}")
     return response_data
 
-# ф-я на генерирование url для обратного поиска
+# ф-я на генерирование url для поиска по координатам
 def makes_url_reverse_geocode(lat, lon):
     base_url = 'https://nominatim.openstreetmap.org/reverse'
     params = {
