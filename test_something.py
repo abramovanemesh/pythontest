@@ -15,7 +15,7 @@ def test_reverse_geocode(lat, lon, result):
         response_data = makes_url_reverse_geocode(lat, lon)
     with allure.step('Сравнение ожидаемых результатов с действительными'):
         validate(response_data, result)
-#    print(response.json())
+
 
 # поиск координат по адресу
 @allure.title('Проверка прямого геокодирования')
@@ -29,5 +29,5 @@ def test_search_geocode(params):
     with allure.step('Сравнение ожидаемых результатов с действительными'):
         assert actual_coord == params['coordinates'], (f'Полученные координаты - {actual_coord}, '
                                                        f'ожидаемые - {params["coordinates"]}')
- #   print(response.json())
+
 

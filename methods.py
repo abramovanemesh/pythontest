@@ -1,11 +1,12 @@
 import requests
-from file_result_reverse_geocode import *
+from file_result_reverse_geocode import * #coord_1, coord_2, coord_3, coord_4, \
+    #address_1, address_2, address_3, address_4, params_for_search_test
 from allure_logging import logger
 
 
 # проверка на то, какой ответ будет, и что делать, если ошибка
 def check_response(response):
-    logger.info(f"Проверка полученного ответа. URL: {response.url}. Статус код: {response.status_code}")
+    logger.info(f"URL запроса: {response.url}. \nПолучен статус код: {response.status_code}")
     assert response.status_code == 200, 'Статус код отличается от 200' #Проверяем, что соответствует необходимому значению, иначе выводится ошибка, которая указана после запятой
     response_data = response.json()
     logger.info(f"Получено тело ответа: {response_data}")
@@ -28,7 +29,7 @@ def makes_url_reverse_geocode(lat, lon):
     response = requests.get(base_url, params=params, headers=headers, timeout=10)
     response_data = check_response(response)  #во втором файле ничего не сделано для этого
     return response_data
-    # return response
+
 
 
 
