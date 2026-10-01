@@ -1,6 +1,6 @@
 import time
 import requests
-from allure_logging import logger
+from logger_conf import logger
 
 
 # Получение ответа
@@ -29,9 +29,6 @@ def makes_url_reverse_geocode(lat, lon):
     response_data = check_response(response)
     time.sleep(1)
     return response_data
-
-
-
 
 
 # функция для нахождения координат по адресу
