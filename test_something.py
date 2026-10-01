@@ -3,7 +3,8 @@ import allure
 from jsonschema import validate
 from methods import *
 
-@allure.title('Проверка обратного геокодирования')
+
+@allure.title('Проверка обратного геокодирования - поиск адреса по координатам')
 @pytest.mark.parametrize('lat, lon, result', [
     (coord_1['lat'], coord_1['lon'], address_1),
     (coord_2['lat'], coord_2['lon'], address_2),
@@ -17,8 +18,7 @@ def test_reverse_geocode(lat, lon, result):
         validate(response_data, result)
 
 
-# поиск координат по адресу
-@allure.title('Проверка прямого геокодирования')
+@allure.title('Проверка прямого геокодирования - поиск координат по адресу')
 @pytest.mark.parametrize('params', params_for_search_test)
 def test_search_geocode(params):
     with allure.step('Составление запроса через задание адреса'):
