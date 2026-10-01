@@ -1,7 +1,7 @@
 import pytest
 import allure
 from jsonschema import validate
-from methods import check_response, makes_url_reverse_geocode, makes_url_search_geocode, get_coordinates
+from methods import makes_url_reverse_geocode, makes_url_search_geocode, get_coordinates
 from file_result_reverse_geocode import coord_1, coord_2, coord_3, coord_4, \
     address_1, address_2, address_3, address_4, params_for_search_test
 
