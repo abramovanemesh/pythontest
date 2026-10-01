@@ -17,3 +17,5 @@ file_handlers = logging.FileHandler('test.log', mode="w", encoding="utf-8") #Ð²Ñ
 file_handlers.setLevel(logging.INFO)
 file_handlers.setFormatter(formatter)
 
+logger.addHandler(console_handlers)
+logger.addHandler(file_handlers)

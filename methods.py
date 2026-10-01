@@ -28,7 +28,7 @@ def makes_url_reverse_geocode(lat, lon):
     }
     logger.info(f"Координаты для обратного геокодинга lat={lat}, lon={lon}")
     response = requests.get(base_url, params=params, headers=headers, timeout=10)
-    response_data = check_response(response)  #во втором файле ничего не сделано для этого
+    response_data = check_response(response)
     time.sleep(1)
     return response_data
 
