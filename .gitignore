@@ -1,0 +1,6 @@
+# Папки с результатами Allure
+allure/
+allureress/
+
+# Логгер
+test.log
