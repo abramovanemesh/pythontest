@@ -13,7 +13,7 @@ headers = {
 def check_response(response):
     with allure.step("Получение статус кода запроса"):
         logger.info(f"URL запроса: {response.url}. \n Получен статус код: {response.status_code}")
-        assert response.status_code == 200, 'Статус код отличается от 200'
+        assert response.status_code == 200, f'Статус код отличается от 200 - {response.status_code}'
     with allure.step("Получение тела ответа response_data"):
         response_data = response.json()
         logger.info(f"Получено тело ответа: {response_data}")
