@@ -3,4 +3,4 @@ allure/
 allureress/
 
 # Логгер
-test.log
+/test.log
